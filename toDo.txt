@@ -1,0 +1,26 @@
+# Logo Replacement Todo List
+
+## React Logo Replacement
+- [ ] Remove react.svg from src/assets/
+- [ ] Add new logo file to src/assets/
+- [ ] Update any imports in components that reference react.svg
+- [ ] Test that new logo displays correctly
+
+## Vite Logo Replacement  
+- [ ] Remove vite.svg from public/
+- [ ] Add new logo file to public/
+- [ ] Update index.html if vite.svg is referenced there
+- [ ] Test that new logo displays correctly in browser
+
+## Additional Tasks
+- [ ] Update any CSS that might reference the old logos
+- [ ] Check for any hardcoded logo references in code
+- [ ] Verify new logos are properly sized and formatted
+- [ ] Test logo display across different screen sizes
+- [ ] Update documentation if logo references exist
+
+## Notes
+- React logo is located in: src/assets/react.svg
+- Vite logo is located in: public/vite.svg
+- Make sure to maintain proper file formats and sizes
+- Consider accessibility (alt text, contrast) for new logos
