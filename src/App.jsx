@@ -5,9 +5,15 @@ import { useTranslation } from 'react-i18next';
 import Nav from './Nav';
 import scrollIcon from './assets/scrollIcon.png';
 import { Icon } from '@iconify/react';
+import seeds1 from "./assets/seeds1.svg";
+import seeds2 from "./assets/seeds2.svg";
+import seeds3 from "./assets/seeds3.svg";
 import seeds4 from "./assets/seeds4.png";
 import seeds6 from "./assets/seeds6.png";
 import seeds7 from "./assets/seeds7.png";
+import rose from "./assets/rose.png";
+import lineTop from "./assets/lineTop.svg";
+import lineBottom from "./assets/lineBottom.svg";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -16,10 +22,10 @@ function App() {
     i18n.changeLanguage(navigator.language);
   }, []);
 
-  
+
   return (
     <>
-      <div className='relative h-screen'>
+      <div className='relative min-h-screen'>
         <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image6.png")] bg-cover bg-center bg-no-repeat -z-40'></div>
         <div className='mx-auto max-w-[1100px]  '>
           <Nav t={t} i18n={i18n} />
@@ -48,7 +54,7 @@ function App() {
               {/* Call-to-Action Cards */}
               <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:text-xl [&>div>div>div:nth-child(1)]:text-[16px]'>
                 <div>
-                  <span className='text-green-400 text-xl'>🌱</span>
+                  <img src={seeds1} alt="Scroll Icon" className=" h-10" />
                   <div>
                     <div>Now available</div>
                     <div>Payment terminal launch</div>
@@ -56,7 +62,7 @@ function App() {
                 </div>
 
                 <div>
-                  <span className='text-green-400 text-xl'>🌱</span>
+                  <img src={seeds2} alt="Scroll Icon" className=" h-10" />
                   <div>
                     <div>Coming soon</div>
                     <div>Loyalty, cashback, and ethical consumption</div>
@@ -64,7 +70,7 @@ function App() {
                 </div>
 
                 <div>
-                  <span className='text-green-400 text-xl'>🌱</span>
+                  <img src={seeds3} alt="Scroll Icon" className=" h-10" />
                   <div>
                     <div>Coming in Q4 2025</div>
                     <div>Full ecosystem launch.</div>
@@ -78,7 +84,9 @@ function App() {
 
           {/* Scroll Indicator */}
           <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center flex flex-col items-center'>
+
             <div className='mb-2'>
+
               <img src={scrollIcon} alt="Scroll Icon" className=" w-[50px] animate-bounce text-white" />
             </div>
             <div className='text-white text-sm'>Scroll to learn more</div>
@@ -116,15 +124,22 @@ function App() {
         </div>
       </div>
       <div className=' relative'>
-        <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image3.png")] bg-cover bg-center bg-no-repeat -z-40'></div>
+      <img src={lineTop} alt="Scroll Icon" className=" transform -translate-y-1/2 w-full mx-auto absolute top-0 left-0" />
+        <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image3.png")] bg-fixed bg-cover bg-center bg-no-repeat -z-40'></div>
 
         <div className='px-5 max-w-[1100px] mx-auto py-32'>
-        <h1 className=' text-[64px] font-bold text-white leading-[125%]'>Pay. <br /> Reward. <br /> Uplift.</h1>
-        <p className='mt-5 text-xl max-w-96 text-white'>Together, we plant something meaningful – seed by seed.</p>
-        <div className=' mt-8 font-bold text-[20px] text-center py-4 px-6 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl'>Become the Core Seed</div>
+          <h1 className=' text-[64px] font-bold text-white leading-[125%]'>Pay. <br /> Reward. <br /> Uplift.</h1>
+          <p className='mt-5 text-xl max-w-96 text-white'>Together, we plant something meaningful – seed by seed.</p>
+          <div className=' mt-8 font-bold text-[20px] text-center py-4 px-6 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl'>Become the Core Seed</div>
         </div>
+          <img src={lineBottom} alt="Scroll Icon" className=" transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0" />
       </div>
-      <div className='h-screen'>
+      <div className=' relative overflow-hidden '>
+      <div className='absolute top-0 left-0 w-full h-full bg-[#5AEDDB] -z-40'></div>
+        <div className='absolute bottom-1/5 left-0 w-full h-full bg-radial from-[#008B78] via-70% via-[#008B78]/0  to-[#008B78]/0 -z-30 transform -translate-x-1/2 translate-y-1/2'></div>
+        <div className='absolute bottom-1/5 right-0 w-full h-full bg-radial from-[#008B78] via-70% via-[#008B78]/0  to-[#008B78]/0 -z-30 transform translate-x-1/2 translate-y-1/2'></div>
+      <div className='min-h-screen relative '>
+      <img src={rose} alt="Scroll Icon" className=" transform translate-x-1/7 absolute right-0 top-1/2 -translate-y-1/2 -z-40" />
         <div className='px-5 max-w-[1100px] mx-auto pt-60 [&>p]:mt-9 [&>p]:text-[20px] [&>p]:text-darkblue [&>p]:max-w-2xl'>
           <div className='w-fit bg-darkblue text-white text-xl font-semibold px-4 py-1 rounded-[15px]'>
             What is Bidhpay
@@ -136,7 +151,7 @@ function App() {
         </div>
 
       </div>
-      <div className='bg-[#029885] h-screen'>
+      <div className=' min-h-screen'>
         <div className='px-5 max-w-[1100px] mx-auto pt-5'>
           <h1 className='mt-6 text-[64px] font-bold text-darkblue'>Our phased launch</h1>
           <p className='mt-9 text-[20px] text-darkblue max-w-2xl'>We’re building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values. But we’re doing it step by step.</p>
@@ -153,42 +168,42 @@ function App() {
           [&>*>div:nth-child(n+3)>*:nth-child(1)]:shrink-0 [&>*>div:nth-child(n+3)>*:nth-child(1)]:h-[26px] [&>*>div:nth-child(n+3)>*:nth-child(1)]:w-[26px] ' >
             <div>
               <div>
-                <img src={seeds4} alt="Scroll Icon"  />
-                <span>Phase 1 - Now live</span> 
+                <img src={seeds4} alt="Scroll Icon" />
+                <span>Phase 1 - Now live</span>
               </div>
               <h2>Payment terminal launch</h2>
               <div className=''>
-                <Icon icon="wpf:checkmark"/>
+                <Icon icon="wpf:checkmark" />
                 <span>Full-featured payment terminals</span>
               </div>
               <div className=''>
-                <Icon icon="wpf:checkmark"/>
+                <Icon icon="wpf:checkmark" />
                 <span>Competitive transaction rates</span>
 
               </div>
               <div className=''>
-                <Icon icon="wpf:checkmark"  />
+                <Icon icon="wpf:checkmark" />
                 <span>Easy onboarding and local support</span>
 
               </div>
             </div>
             <div>
               <div>
-                <img src={seeds4} alt="Scroll Icon"  />
+                <img src={seeds4} alt="Scroll Icon" />
                 Phase 2 - Coming Soon
               </div>
               <h2>Cashback, ethical consumption</h2>
               <div>
-                <Icon icon="carbon:ibm-cloud-direct-link-1-connect"  />
+                <Icon icon="carbon:ibm-cloud-direct-link-1-connect" />
                 <span>Connect customers to your store</span>
               </div>
               <div>
-                <Icon icon="streamline:payment-cash-out-3-remix"  />
+                <Icon icon="streamline:payment-cash-out-3-remix" />
                 <span>Reward loyalty through automatic cashback</span>
 
               </div>
               <div>
-                <Icon icon="material-symbols:search-insights"  />
+                <Icon icon="material-symbols:search-insights" />
                 <span>Access your own customer portal with real-time insights</span>
 
               </div>
@@ -196,21 +211,21 @@ function App() {
             </div>
             <div>
               <div>
-                <img src={seeds4} alt="Scroll Icon"  />
+                <img src={seeds4} alt="Scroll Icon" />
                 Phase 3 - Coming Soon
               </div>
               <h2>Full ecosystem launch</h2>
               <div>
-                <Icon icon="gravity-ui:megaphone"  />
+                <Icon icon="gravity-ui:megaphone" />
                 <span>Marketing tools designed for local business owners</span>
               </div>
-             <div>
-                <Icon icon="ant-design:heart-outlined"  />
+              <div>
+                <Icon icon="ant-design:heart-outlined" />
                 <span>Integrated Sadaqah feature with every payment</span>
 
               </div>
               <div>
-                <Icon icon="carbon:platforms"  />
+                <Icon icon="carbon:platforms" />
                 <span>A platform that merges faith, community, and commerce</span>
 
               </div>
@@ -218,8 +233,11 @@ function App() {
           </div>
         </div>
       </div>
-
-      <div className='bg-[url("./assets/image5.png")] bg-cover bg-center bg-no-repeat  pt-24 pb-36'>
+      </div>
+      
+      <div className='bg-[url("./assets/image5.png")] bg-cover bg-center bg-no-repeat pt-24 pb-36 relative'>
+        <img src={lineTop} alt="Scroll Icon" className=" transform -translate-y-1/2 w-full mx-auto absolute top-0 left-0" />
+        <img src={lineBottom} alt="Scroll Icon" className=" transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0" />
         <div className='px-5 max-w-[1100px] mx-auto '>
           <h1 className='text-[64px] font-bold max-w-lg text-white leading-[125%]'>Merchants: <br />
             You are the seed of change
@@ -262,7 +280,7 @@ function App() {
         </div>
       </div>
       <div className=' relative pb-32'>
-      <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/bg1.png")] bg-cover bg-bottom bg-no-repeat -z-30'></div>
+        <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/bg1.png")] bg-cover bg-bottom bg-no-repeat -z-30'></div>
         <div className='px-5 max-w-[1100px] mx-auto pt-24 text-center'>
           <h1 className='text-[64px] text-white leading-[125%]'>
             Join the early phase and <br />
@@ -319,7 +337,7 @@ function App() {
         </div>
       </div>
       <div className='relative text-darkblue -mt-72 pt-72 -mb-72 pb-72'>
-      <div className='absolute top-0 left-0 w-full h-full bg-radial from-[#FFFFFF] via-85% via-[#CCCCCC] to-[#999999] -z-40'></div>
+        <div className='absolute top-0 left-0 w-full h-full bg-radial from-[#FFFFFF] via-85% via-[#CCCCCC] to-[#999999] -z-40'></div>
         <div className='px-5 max-w-[1100px] mx-auto pt-20 text-center'>
           <h1 className='text-[64px] leading-[125%]'>Ready to become more <br /> than just a shopkeeper?</h1>
           <p className=' text-2xl mt-9 max-w-[812px] mx-auto'>Join the Core Seeds and help us grow something powerful from the ground up.</p>
@@ -333,7 +351,7 @@ function App() {
 
       <div className=' relative h-[100vh] '>
         <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/bg2.png")] bg-cover bg-top bg-no-repeat -z-30'>
-        <img src={seeds7 } alt="Seeds 6" className=" w-44 mx-auto transform -translate-y-2/5" />
+          <img src={seeds7} alt="Seeds 6" className=" w-44 mx-auto transform -translate-y-2/5" />
         </div>
       </div>
 
