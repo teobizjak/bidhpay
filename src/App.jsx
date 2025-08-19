@@ -26,19 +26,20 @@ function App() {
 
   return (
     <>
-      
+    <div className='pt-12'></div>
+       <Nav t={t} i18n={i18n} />
     
-      <div className='relative min-h-screen'>
+      <div className='relative min-h-screen -mt-52'>
         <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image6.png")] bg-cover bg-center bg-no-repeat -z-40'></div>
         <div className='mx-auto max-w-[1100px]  '>
-        <Nav t={t} i18n={i18n} />
+       
 
           {/* Hero Section */}
           <div className=' mt-[78px] px-5'>
             {/* Left Content Area */}
             <div className='flex-1 max-w-2xl'>
               {/* Tagline Badge */}
-              <div className='inline-block bg-darkblue text-white text-sm md:text-xl font-semibold px-4 py-1 rounded-[15px] tracking-wider'>
+              <div className='inline-block bg-darkblue text-white text-sm md:text-xl font-semibold mt-48 px-4 py-1 rounded-[15px] tracking-wider'>
                 Bidhpay - every payment matters
               </div>
 
@@ -55,7 +56,7 @@ function App() {
 
 
               {/* Call-to-Action Cards */}
-              <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:md:text-xl [&>div>div>div:nth-child(2)]:text-sm [&>div>div>div:nth-child(1)]:text-xs [&>div>div>div:nth-child(1)]:md:text-base'>
+              <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:bg-[#1f1c2a]/41 [&>*]:mt-2 [&>*]:max-w-96 [&>*]:px-4 [&>*]:backdrop-blur-md [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:md:text-xl [&>div>div>div:nth-child(2)]:text-sm [&>div>div>div:nth-child(1)]:text-xs [&>div>div>div:nth-child(1)]:md:text-base'>
                 <div>
                   <img src={seeds1} alt="Scroll Icon" className=" h-8 md:h-10" />
                   <div>
@@ -86,14 +87,14 @@ function App() {
           </div>
 
           {/* Scroll Indicator */}
-          <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 text-center flex-col items-center flex'>
+          <div className='absolute hidden bottom-8 left-1/2 transform -translate-x-1/2 text-center flex-col items-center md:flex'>
 
             <div className='mb-2'>
 
               <img src={scrollIcon} alt="Scroll Icon" className=" w-[50px] animate-bounce text-white" />
             </div>
-            <div className='text-white text-xs hidden md:block'>Scroll to learn more</div>
-            <div className='text-white text-xs block md:hidden'>Swipe to learn more</div>
+            <div className='text-white text-sm hidden md:block'>Scroll to learn more</div>
+          
           </div>
 
         </div>
@@ -127,9 +128,9 @@ function App() {
           <div className=' mt-16 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-[#6BFFE8] to-[#49C4B1] border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>Become the Core Seed</div>
         </div>
       </div>
-      <div className=' relative'>
+      <div className=' relative overflow-hidden'>
         <img src={lineTop} alt="Scroll Icon" className=" transform -translate-y-1/2 w-full mx-auto absolute top-0 left-0" />
-        <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image3.png")] bg-fixed bg-cover bg-center bg-no-repeat -z-40'></div>
+        <div className='absolute top-0 left-0 w-[100svw] h-[100svh] bg-[url("./assets/image3.png")] bg-fixed bg-cover bg-center bg-no-repeat -z-40'></div>
 
         <div className='px-5 max-w-[1100px] mx-auto py-32'>
           <h1 className=' text-6xl md:text-[64px] font-bold text-white md:leading-[125%]'>Pay. <br /> Reward. <br /> Uplift.</h1>
@@ -151,7 +152,7 @@ function App() {
             <h1 className='mt-4 text-6xl md:text-[64px] font-bold text-darkblue'>Bidhara Payment</h1>
             <p>The name BidhPay is a fusion of two worlds: Bidhara – the Arabic word for seed, a timeless symbol of growth, blessing, and new beginnings – and Payments, the foundation that connects us all.</p>
             <p>Together, they embody what we stand for: at BidhPay, a payment is never just a transaction. It's a moment of trust. A meaningful act. A contribution to something greater. Our logo, inspired by the revered black cumin seed, carries the values of healing, strength, and protection. It's more than a symbol. It's our promise.</p>
-            <div className=' mt-10 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-white border-1 border-white/61 text-darkblue w-fit rounded-2xl'>Become the Core Seed</div>
+            <div className=' mt-10 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-white/42 to-[#efefef]/57  border-1 border-white/61 text-darkblue w-fit rounded-2xl'>Become the Core Seed</div>
           </div>
 
         </div>
@@ -358,9 +359,9 @@ function App() {
           <img src={seeds7} alt="Seeds 6" className=" w-44 mx-auto transform -translate-y-2/5" />
         </div>
         <h3 className='pt-32 text-[28px] md:text-[32px] text-white text-center'>Sign up for newsletter</h3>
-        <div className='flex justify-center gap-3.5 mt-9'>
+        <div className='flex flex-col md:flex-row justify-center gap-3.5 mt-9 max-w-80 md:max-w-none mx-auto'>
           <input type="text" name="" id="" className='md:w-full md:max-w-md md:py-3 py-2 md:px-4 px-2 rounded-xl bg-[#0D0F16] border-1 text-white border-white/20' />
-          <div className=' font-bold text-base md:text-[20px] text-center py-4 px-6 bg-radial from-[#6BFFE8] to-[#49C4B1] border-1 border-white/61 text-darkblue rounded-2xl'>Become the Core Seed</div>
+          <div className=' font-bold text-base md:text-[20px] text-center py-4 px-6 bg-radial from-[#6BFFE8] to-[#49C4B1] border-1 border-white/61 text-darkblue rounded-2xl mt-4 md:mt-0'>Become the Core Seed</div>
         </div>
         <div className='md:max-w-[1100px] max-w-full px-4 md:px-0 mx-auto flex justify-between mt-26 text-[#BEBEBE] mb-16'>
           <img src={seedapps} alt="logo" className=' md:max-h-14 max-h-10' />
