@@ -15,6 +15,7 @@ import seedapps from "./assets/seedapps.png";
 import rose from "./assets/rose.png";
 import lineTop from "./assets/lineTop.svg";
 import lineBottom from "./assets/lineBottom.svg";
+import {motion} from "framer-motion";
 
 function App() {
   const { t, i18n } = useTranslation();
@@ -22,11 +23,33 @@ function App() {
   useEffect(() => {
     i18n.changeLanguage(navigator.language);
   }, []);
+  const [activeIndex, setActiveIndex] = useState(-1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % 4);
+    }, 1500); // Change card every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const cardVariants = {
+    active: {
+      scale: 1.10,
+      
+      transition: { duration: 0.5, delay: 0.5 }
+    },
+    inactive: {
+      scale: 1,
+      
+      transition: { duration: 0.5, delay: 0.5 }
+    }
+  };
 
 
   return (
     <>
-    <div className='pt-12'></div>
+    <div className=' pt-4 md:pt-12'></div>
        <Nav t={t} i18n={i18n} />
     
       <div className='relative min-h-screen -mt-52'>
@@ -35,7 +58,7 @@ function App() {
        
 
           {/* Hero Section */}
-          <div className=' mt-[78px] px-5'>
+          <div className=' -mt-[325px] md:mt-[78px] px-5'>
             {/* Left Content Area */}
             <div className='flex-1 max-w-2xl'>
               {/* Tagline Badge */}
@@ -56,30 +79,39 @@ function App() {
 
 
               {/* Call-to-Action Cards */}
-              <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:bg-[#1f1c2a]/41 [&>*]:mt-2 [&>*]:max-w-96 [&>*]:px-4 [&>*]:backdrop-blur-md [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:md:text-xl [&>div>div>div:nth-child(2)]:text-sm [&>div>div>div:nth-child(1)]:text-xs [&>div>div>div:nth-child(1)]:md:text-base'>
-                <div>
-                  <img src={seeds1} alt="Scroll Icon" className=" h-8 md:h-10" />
-                  <div>
-                    <div>Now available</div>
-                    <div>Payment terminal launch</div>
-                  </div>
-                </div>
+              <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:bg-[#1f1c2a]/41 [&>*]:mt-2 [&>*]:max-w-96 [&>*]:px-4 [&>*]:backdrop-blur-md [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:md:text-xl [&>div>div>div:nth-child(2)]:text-sm [&>div>div>div:nth-child(1)]:text-xs [&>div>div>div:nth-child(1)]:md:text-base pb-16'>
+              <motion.div
+          variants={cardVariants}
+          animate={activeIndex === 0 ? "active" : "inactive"}
+        >
+          <img src={seeds1} alt="Payment Icon" className="h-8 md:h-10" />
+          <div>
+            <div>Now available</div>
+            <div>Payment terminal launch</div>
+          </div>
+        </motion.div>
 
-                <div>
-                  <img src={seeds2} alt="Scroll Icon" className=" h-8 md:h-10" />
-                  <div>
-                    <div>Coming soon</div>
-                    <div>Loyalty, cashback, and ethical consumption</div>
-                  </div>
-                </div>
+        <motion.div
+          variants={cardVariants}
+          animate={activeIndex === 1 ? "active" : "inactive"}
+        >
+          <img src={seeds2} alt="Loyalty Icon" className="h-8 md:h-10" />
+          <div>
+            <div>Coming soon</div>
+            <div>Loyalty, cashback, and ethical consumption</div>
+          </div>
+        </motion.div>
 
-                <div>
-                  <img src={seeds3} alt="Scroll Icon" className=" h-8 md:h-10" />
-                  <div>
-                    <div>Coming in Q4 2025</div>
-                    <div>Full ecosystem launch.</div>
-                  </div>
-                </div>
+        <motion.div
+          variants={cardVariants}
+          animate={activeIndex === 2 ? "active" : "inactive"}
+        >
+          <img src={seeds3} alt="Ecosystem Icon" className="h-8 md:h-10" />
+          <div>
+            <div>Coming in Q4 2025</div>
+            <div>Full ecosystem launch.</div>
+          </div>
+        </motion.div>
               </div>
             </div>
 
@@ -100,9 +132,9 @@ function App() {
         </div>
       </div >
 
-      <div className=' relative -mt-36 pt-36 pb-40'>
+      <div className=' relative md:-mt-36 md:pt-36 pb-40'>
         <div className='absolute top-0 left-0 w-full h-full bg-[#11131B] bg-no-repeat -z-50'></div>
-        <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/image2.png")] bg-cover bg-top bg-no-repeat  -z-30 '></div>
+        <div className='absolute top-0 left-0 w-full h-full md:bg-[url("./assets/image2.png")] bg-cover bg-top bg-no-repeat  -z-30 '></div>
         <div className='mx-auto max-w-[1100px] px-5'>
           <h1 className='w-fit mx-auto text-white text-6xl md:text-[64px] font-bold pt-52'>Every payment is a seed</h1>
           <div className='mx-auto  w-fit bg-[#49C4B1] text-white text-sm md:text-xl font-semibold px-4 py-1 rounded-[15px] mt-6'>
@@ -160,7 +192,7 @@ function App() {
           <div className='px-5 max-w-[1100px] mx-auto pt-5'>
             <h1 className='mt-6 text-6xl md:text-[64px] font-bold text-darkblue'>Our phased launch</h1>
             <p className='mt-9 md:text-[20px] text-base text-darkblue max-w-2xl'>We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values. But we're doing it step by step.</p>
-            <div className=' text-white grid-cols-1 md:grid-cols-3 grid gap-4 mt-16
+            <div className=' text-white grid-cols-1 md:grid-cols-3 grid gap-4 mt-16 [&>*]:mt-16 [&>*]:md:mt-0 
           [&>*]:bg-darkblue/37 [&>*]:rounded-2xl [&>*]:px-3 [&>*]:pb-6
           [&>*>*:nth-child(1)]:bg-darkblue [&>*>*:nth-child(1)]:text-white [&>*>*:nth-child(1)]:text-lg [&>*>*:nth-child(1)]:font-bold [&>*>*:nth-child(1)]:px-4 [&>*>*:nth-child(1)]:py-1 [&>*>*:nth-child(1)]:rounded-[15px] [&>*>*:nth-child(1)]:mx-auto [&>*>*:nth-child(1)]:w-full [&>*>*:nth-child(1)]:-translate-y-3 [&>*>*:nth-child(1)]:inline-flex [&>*>*:nth-child(1)]:items-center [&>*>*:nth-child(1)]:gap-2 
           [&>*>h2]:text-white [&>*>h2]:text-3xl [&>*>h2]:font-bold [&>*>h2]:leading-12
