@@ -29,7 +29,7 @@ function Nav({ t, i18n }) {
     }, [isDropdownOpen, isMobileDropdownOpen]);
 
     return (
-        <div className='mobile-nav sticky top-0 z-50 '>
+        <div className='mobile-nav sticky top-2.5 z-50 '>
             <div className='flex gap-2 text-xl sticky top-0 z-50 max-w-[1100px] mx-auto backdrop-blur-md'>
                 <div className={`relative inline-flex flex-1 bg-white/58 border-1 border-white/31 rounded-2xl justify-between pl-4 pr-8 py-2.5 items-center`}>
 
