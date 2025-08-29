@@ -7,13 +7,21 @@ import Nav from './Nav.jsx';
 
 const router = createBrowserRouter([
     {
-      path: "/bidhpay/", element:<><Nav/><Home/></> 
+      path: "/bidhpay/", element:<><Home/></> 
     },
     {
-      path:"/contact", element: <Contact />
-    }
+        path: "/", element:<><Home/></> 
+      },
+    {
+      path:"/contact/", element: <><Contact/></> 
+    },
+    {
+        path: "*", element:<><Home/></> 
+      },
+
   ]);
 
 createRoot(document.getElementById('root')).render(
-    <RouterProvider router={router}/>
+    <><Nav/><RouterProvider router={router}/></>
+    
 )
