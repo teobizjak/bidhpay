@@ -42,7 +42,7 @@ function Nav({ t, i18n }) {
                         <span>About</span>
                         <span>Project</span>
                         <span>Merchants</span>
-                        <Link to={"/contact"}>Contact</Link>
+                        <a href='/contact'>Contact</a>
                     </div>
                     <div className='md:hidden cursor-pointer' onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}>
                         <Icon height={36} icon="mdi:menu" />
