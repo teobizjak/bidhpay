@@ -10,6 +10,7 @@ import Contact from './Contact';
 import Terms from './Terms';
 import Privacy from './Privacy';
 import { useEffect } from 'react';
+import Footer from './Footer';
 
 function App() {
     const { t, i18n } = useTranslation();
@@ -28,6 +29,7 @@ function App() {
         <Route path="/privacyPolicy/" element={<Privacy />} />
         <Route path="*" element={<Home />} />
       </Routes>
+      <Footer t={t}/>
     </BrowserRouter>
   );
 }

@@ -42,10 +42,10 @@ function Nav({ t, i18n }) {
       </Link>
 
                     <div className=' md:inline-flex gap-8 items-center hidden'>
-                        <span>About</span>
-                        <span>Project</span>
-                        <span>Merchants</span>
-                        <Link to="/contact">Contact</Link>
+                        <span>{t("navAbout")}</span>
+                        <span>{t("navProject")}</span>
+                        <span>{t("navMerchants")}</span>
+                        <Link to="/contact">{t("navContact")}</Link>
                     </div>
                     <div className='md:hidden cursor-pointer' onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}>
                         <Icon height={36} icon="mdi:menu" />
@@ -94,16 +94,16 @@ function Nav({ t, i18n }) {
                 <div className='bg-white/58 border-1 border-white/31 rounded-2xl mt-2 shadow-lg backdrop-blur-md'>
                     <div className='flex flex-col py-2'>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>About</span>
+                            <span className='text-lg'>{t("navAbout")}</span>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>Project</span>
+                            <span className='text-lg'>{t("navProject")}</span>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>Merchants</span>
+                        <span className='text-lg'>{t("navMerchants")}</span>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>Contact</span>
+                            <Link to={"/contact"} className='text-lg' onClick={()=>{setIsMobileDropdownOpen(false)}}><span className='text-lg'>{t("navContact")}</span></Link>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@ function Terms() {
     
     <>
     <div className=' absolute top-0 left-0 min-h-screen w-full bg-radial from-white to-[#999999] -z-50' />
-            <div className='mt-24 mb-36 max-w-[1100px] mx-auto px-5'>
+            <div className='-mt-52 md:mt-24 mb-36 max-w-[1100px] mx-auto px-5'>
                 <h1 className=' text-[40px] md:text-[64px] text-center md:text-left'>
                     Privacy Policy
                 </h1>
@@ -17,7 +17,7 @@ function Terms() {
                 Lorem ipsum dolor sit amet consectetur. Malesuada quis nisi platea condimentum. Velit pharetra ut aliquam adipiscing nulla vel eu. Leo eget egestas arcu lectus at. Molestie integer neque ornare etiam enim auctor id orci.
                 </p>
             </div>
-            <Footer/>
+           
     </>
   )
 }
