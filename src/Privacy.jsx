@@ -1,13 +1,12 @@
-import React, { useEffect } from 'react'
-import Footer from './Footer'
+import React from 'react'
 
-function Contact() {
+function Privacy() {
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
-    return (
-        <>
-            <div className=' absolute top-0 left-0 min-h-screen w-full bg-radial from-white to-[#999999] -z-50' />
+  return (
+    <>
+    <div className=' absolute top-0 left-0 min-h-screen w-full bg-radial from-white to-[#999999] -z-50' />
             <div className='mt-24 mb-36 max-w-[1100px] mx-auto px-5'>
                 <h1 className=' text-[40px] md:text-[64px] text-center md:text-left'>
                     Privacy Policy
@@ -17,10 +16,8 @@ function Contact() {
                 </p>
             </div>
             <Footer/>
-
-        </>
-
-    )
+    </>
+  )
 }
 
-export default Contact
+export default Privacy

@@ -12,6 +12,7 @@ function Nav({ t, i18n }) {
         { name: 'French', flag: 'circle-flags:fr', code: 'fr' },
         { name: 'Dutch', flag: 'circle-flags:nl', code: 'nl' }
     ];
+    
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -36,13 +37,15 @@ function Nav({ t, i18n }) {
             <div className='flex gap-2 text-xl sticky top-0 z-50 max-w-[1100px] mx-auto backdrop-blur-md'>
                 <div className={`relative inline-flex flex-1 bg-white/58 border-1 border-white/31 rounded-2xl justify-between pl-4 pr-8 py-2.5 items-center`}>
 
-                    <img src={bidhpayLogo} alt="Bidhpay Logo" className=" h-[46px]" />
+                <Link to="/">
+        <img src={bidhpayLogo} alt="Bidhpay Logo" className="h-[46px]" />
+      </Link>
 
                     <div className=' md:inline-flex gap-8 items-center hidden'>
                         <span>About</span>
                         <span>Project</span>
                         <span>Merchants</span>
-                        <a href='/contact'>Contact</a>
+                        <Link to="/contact">Contact</Link>
                     </div>
                     <div className='md:hidden cursor-pointer' onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}>
                         <Icon height={36} icon="mdi:menu" />

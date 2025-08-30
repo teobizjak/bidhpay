@@ -1,27 +1,35 @@
-import { createRoot } from 'react-dom/client'
-import App from './App.jsx'
-import { createBrowserRouter, RouterProvider} from 'react-router-dom';
-import Home from './Home.jsx';
-import Contact from './Contact.jsx';
-import Nav from './Nav.jsx';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { createRoot } from 'react-dom/client';
+import "./i18n"
+import { useTranslation } from 'react-i18next';
 
-const router = createBrowserRouter([
-    {
-      path: "/bidhpay/", element:<><Home/></> 
-    },
-    {
-        path: "/", element:<><Home/></> 
-      },
-    {
-      path:"/contact/", element: <><Contact/></> 
-    },
-    {
-        path: "*", element:<><Home/></> 
-      },
 
-  ]);
+import Nav from './Nav';
+import Home from './Home';
+import Contact from './Contact';
+import Terms from './Terms';
+import Privacy from './Privacy';
+import { useEffect } from 'react';
 
-createRoot(document.getElementById('root')).render(
-    <><Nav/><RouterProvider router={router}/></>
-    
-)
+function App() {
+    const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    i18n.changeLanguage(navigator.language);
+  }, []);
+  return (
+    <BrowserRouter>
+      <Nav t={t} i18n={i18n} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/bidhpay/" element={<Home />} />
+        <Route path="/contact/" element={<Contact />} />
+        <Route path="/terms/" element={<Terms />} />
+        <Route path="/privacyPolicy/" element={<Privacy />} />
+        <Route path="*" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+createRoot(document.getElementById('root')).render(<App />);
