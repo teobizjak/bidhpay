@@ -22,14 +22,14 @@ function App() {
     <BrowserRouter>
       <Nav t={t} i18n={i18n} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/bidhpay/" element={<Home />} />
+        <Route path="/" element={<><Home /><Footer t={t}/></>} />
+        <Route path="/bidhpay/" element={<><Home /><Footer t={t}/></>} />
         <Route path="/contact/" element={<Contact />} />
-        <Route path="/terms/" element={<Terms />} />
+        <Route path="/terms/" element={<><Terms /> <Footer t={t}/></>} />
         <Route path="/privacyPolicy/" element={<Privacy />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<><Home /><Footer t={t}/></>} />
       </Routes>
-      <Footer t={t}/>
+      
     </BrowserRouter>
   );
 }

@@ -12,20 +12,20 @@ import seeds4 from "./assets/seeds4.png";
 import seeds6 from "./assets/seeds6.png";
 
 import rose from "./assets/rose.png";
+import roseMobile from "./assets/roseMobile.png";
 import lineTop from "./assets/lineTop.svg";
 import mobileTop from "./assets/mobileBottom.png";
 import lineBottom from "./assets/lineBottom.svg";
 import { motion } from "framer-motion";
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 function Home() {
     const { t, i18n } = useTranslation();
     useEffect(() => {
         window.scrollTo(0, 0);
       }, []);
-    useEffect(() => {
-        i18n.changeLanguage(navigator.language);
-    }, []);
+    
     const [activeIndex, setActiveIndex] = useState(-1);
 
     const merchantsRef = useRef(null);
@@ -59,20 +59,20 @@ function Home() {
         <>
 
 
-            <div className='relative min-h-[106svh] md:-mt-52 pb-64 md:pb-0'>
+            <div className='relative min-h-[106svh] md:-mt-52 pb-36 '>
                 <div className='absolute top-0 left-0 w-full min-h-full bg-[url("./assets/image6.png")] bg-cover bg-center bg-no-repeat -z-40'></div>
-                <div className='mx-auto max-w-[1100px] h-screen  '>
+                <div className='mx-auto max-w-[1100px] min-h-screen  '>
 
 
                     {/* Hero Section */}
-                    <div className=' -mt-[325px] md:mt-[78px] px-5 h-screen'>
+                    <div className=' -mt-[325px] md:mt-[78px] px-5 min-h-screen'>
                         {/* Left Content Area */}
                         <div className=' flex-1 max-w-4xl flex flex-col items-center  mx-auto h-full text-center'>
                             
                            
 
                             {/* Main Heading */}
-                            <h1 className=' text-[40px] md:text-[64px] font-bold text-white md:leading-20 mt-56 text-center md:w-[600px]'>
+                            <h1 className=' text-[40px] md:text-[64px] font-bold text-white md:leading-20 mx-auto mt-36 text-center md:w-[600px] pt-24'>
                             {t("Bidhpay - every payment matters")}
                             </h1>
 
@@ -113,12 +113,12 @@ function Home() {
                                     
                                     <div>
                                         <img src={seeds3} alt="Ecosystem Icon" className="h-8 md:h-10" />
-                                        <div>{t("Coming in Q4 2025")}</div>
+                                        <div>{t("Coming in Q3 2025")}</div>
                                         <div>{t("Full ecosystem launch.")}</div>
                                     </div>
                                 </motion.div>
                             </div>
-                            <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>{t("Find out more")}</div>
+                            <Link to="/contact" className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto cursor-pointer'>{t("Find out more")}</Link>
                         </div>
 
 
@@ -134,15 +134,13 @@ function Home() {
                 <div className='absolute top-0 left-0 translate-x-1 w-full h-full md:bg-[url("./assets/image2.png")] bg-cover bg-no-repeat -z-30 '></div>
                 <div className='absolute top-0 left-0 translate-x-1 w-full h-full bg-[url("./assets/mobileImg2.png")] md:hidden bg-top bg-no-repeat -z-30 bg-cover '></div>
                 <div className='mx-auto max-w-[1100px] px-5'>
-                    <h1 className='w-fit mx-auto text-darkblue text-[40px] text-center md:text-left md:text-[64px] font-bold pt-24'>{t("Every payment is a seed")}</h1>
-                    <div className='mx-auto  w-fit bg-darkblue text-white text-sm md:text-xl font-semibold px-4 py-1 rounded-[15px] mt-6'>
-                        {t("What happens with every payment?")}
-                    </div>
+                    <h1 className='w-fit mx-auto mb-24 text-darkblue text-[40px] text-center md:text-left md:text-[64px] font-bold pt-24'>{t("Every payment is a seed")}</h1>
+                    
                     <div className='md:flex justify-center items-center mt-10 text-center text-darkblue gap-8 [&>*]:mt-16 [&>*]:md:mt-0 [&>*]:px-10 [&>*]:flex-1 [&>*>*:nth-child(1)]:flex [&>*>*:nth-child(1)]:justify-center [&>*>*:nth-child(1)]:items-center [&>*>*:nth-child(2)]:md:text-[32px] [&>*>*:nth-child(2)]:text-[24px] [&>*>*:nth-child(2)]:font-bold [&>*>*:nth-child(2)]:leading-10 [&>*>*:nth-child(2)]:mt-[22px] [&>*>*:nth-child(3)]:md:text-[20px] [&>*>*:nth-child(3)]:md:mt-[27px]'>
                         <div>
                             <div><Icon icon="hugeicons:plant-01" width="78" height="78" /></div>
                             <div>{t("Seeds are planted")}</div>
-                            <div>{t("Cashback rewards for your customers")}</div>
+                            <div>{t("Cashback rewards -Fidelity seeds for your customers")}</div>
                         </div>
                         <div>
                             <div><Icon icon="solar:hand-heart-broken" width="78" height="78" /></div>
@@ -155,7 +153,10 @@ function Home() {
                             <div>{t("Merchant to customer and both to community")}</div>
                         </div>
                     </div>
-                    <div className=' mt-16 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-[#FFFFFF]/42 to-[#EFEFEF]/57 border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>{t("Become an Ambasador")}</div>
+                    <div className='mt-16 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-[#FFFFFF]/42 to-[#EFEFEF]/57 border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>
+                        <Link to="/contact" className=' '>{t("Become an Ambassador")}</Link>
+                    </div>
+                    
                 </div>
             </div>
             <div className=' relative'>
@@ -166,7 +167,10 @@ function Home() {
                 <div className='px-5 max-w-[1100px] mx-auto py-32'>
                     <h1 className=' text-[40px] text-center md:text-left md:text-[64px] font-bold text-white md:leading-[125%]'>{t("Pay.")}<br /> {t("Reward.")} <br /> {t("Uplift.")}</h1>
                     <p className='mt-5 md:text-xl text-base max-w-96 text-white text-center md:text-left'>{t("Together, we plant something meaningful – seed by seed.")}</p>
-                    <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto md:mx-0'>{t("Become the Core Seed")}</div>
+                    <div className='mt-8 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto md:mx-0'>
+                    <Link to="/contact" className=' '>{t("Become an Ambassador")}</Link>
+                    </div>
+                    
                 </div>
                 <img src={lineBottom} alt="Scroll Icon" className=" hidden md:block transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0 z-40" />
                 <img src={mobileTop} alt="Scroll Icon" className=" block md:hidden transform translate-y-1/2 w-[1800px] mx-auto absolute bottom-0 left-0 z-40" />
@@ -178,6 +182,7 @@ function Home() {
                 <div className='absolute bottom-1/5 right-0 w-full h-full bg-radial from-[#008B78] via-70% via-[#008B78]/0  to-[#008B78]/0 -z-30 transform translate-x-1/2 translate-y-1/2'></div>
                 <div className=' relative '>
                     <img src={rose} alt="Scroll Icon" className=" md:block hidden transform translate-x-1/7 absolute right-0 top-0  -translate-y-1 -z-40" />
+                    <img src={roseMobile} alt="Scroll Icon" className=" md:hidden block w-full mt-24" />
                     <div className='px-5 max-w-[1100px] mx-auto pt-40 [&>p]:mt-8 [&>p]:md:text-[20px] [&>p]:text-base [&>p]:text-darkblue [&>p]:max-w-2xl -z-40'>
                         <div className='w-fit bg-darkblue text-white md:text-xl text-base mx-auto font-semibold md:mx-0 px-4 py-1 rounded-[15px]'>
                             {t("What is Bidhpay")}
@@ -185,14 +190,17 @@ function Home() {
                         <h1 className='mt-4 text-[40px]  md:text-[64px] font-bold text-darkblue text-center md:text-left'>{t("Bidhara Payment")}</h1>
                         <p>{t("The name BidhPay is a fusion of two worlds: Bidhara – the Arabic word for seed, a timeless symbol of growth, blessing, and new beginnings – and Payments, the foundation that connects us all.")}</p>
                         <p>{t("Together, they embody what we stand for: at BidhPay, a payment is never just a transaction. It's a moment of trust. A meaningful act. A contribution to something greater. Our logo, inspired by the revered black cumin seed, carries the values of healing, strength, and protection. It's more than a symbol. It's our promise.")}</p>
-                        <div className=' mx-auto md:mx-0 mt-10 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-white/42 to-[#efefef]/57  border-1 border-white/61 text-darkblue w-fit rounded-2xl'>{t("Become the Core Seed")}</div>
+                        <div className=' mx-auto md:mx-0 mt-10 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-white/42 to-[#efefef]/57  border-1 border-white/61 text-darkblue w-fit rounded-2xl'>
+                              <Link to="/contact" >{t("Become an Ambassador")}</Link>
+                        </div>
+                      
                     </div>
 
                 </div>
                 <div className=''>
                     <div className='px-5 max-w-[1100px] mx-auto mt-28 mb-40'>
                         <h1 className='mt-6 md:mt-60 text-[40px] md:text-[64px] text-center font-bold text-darkblue'>{t("Our phased launch")}</h1>
-                        <p className='mt-9  md:text-[20px] text-center mx-auto text-base text-darkblue max-w-2xl'>{t("We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values. But we're doing it step by step.")}</p>
+                        <p className='mt-9  md:text-[20px] text-center mx-auto text-base text-darkblue max-w-2xl'>{t("We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed")}</p>
                         <div className=' text-white grid-cols-1 md:grid-cols-3 grid gap-4 mt-16 [&>*]:mt-16 [&>*]:md:mt-0 
            [&>*]:rounded-2xl [&>*]:px-3 [&>*]:pb-6
           [&>*>*:nth-child(1)]:bg-darkblue [&>*>*:nth-child(1)]:text-white [&>*>*:nth-child(1)]:text-lg [&>*>*:nth-child(1)]:font-bold [&>*>*:nth-child(1)]:px-4 [&>*>*:nth-child(1)]:py-1 [&>*>*:nth-child(1)]:rounded-[15px] [&>*>*:nth-child(1)]:mx-auto [&>*>*:nth-child(1)]:w-full [&>*>*:nth-child(1)]:-translate-y-3 [&>*>*:nth-child(1)]:inline-flex [&>*>*:nth-child(1)]:items-center [&>*>*:nth-child(1)]:gap-2 
@@ -230,7 +238,7 @@ function Home() {
                                     <img src={seeds4} alt="Scroll Icon" />
                                     {t("Phase 2 - Coming Soon")}
                                 </div>
-                                <h2>{t("Cashback, ethical consumption")}</h2>
+                                <h2>{t("Cashback - Donations")}</h2>
                                 <div>
                                     <Icon icon="carbon:ibm-cloud-direct-link-1-connect" />
                                     <span>{t("Connect customers to your store")}</span>
@@ -257,7 +265,7 @@ function Home() {
                                     <img src={seeds4} alt="Scroll Icon" />
                                     {t("Phase 3 - Coming Soon")}
                                 </div>
-                                <h2>{t("Full ecosystem launch")}</h2>
+                                <h2>{t("Full ethical ecosystem launch")}</h2>
                                 <div>
                                     <Icon icon="gravity-ui:megaphone" />
                                     <span>{t("Marketing tools designed for local business owners")}</span>
@@ -270,8 +278,12 @@ function Home() {
                                 </div>
                             </div>
                         </div>
-                        <h1 className=' text-[40px] md:text-[64px] font-bold text-center mt-24'>{t("Become an Ambasador")}</h1>
-                        <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>{t("Join the early phase")}</div>
+                        <h1 className=' text-[40px] md:text-[64px] font-bold text-center mt-24'>{t("Become an Ambassador")}</h1>
+                        <div className=' mt-12 md:mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>
+
+                            <Link to="/contact" >{t("Join the early phase")}</Link>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -330,7 +342,7 @@ function Home() {
                 <div className='px-5 max-w-[1100px] mx-auto pt-24 text-center'>
                     <h1 className='text-[40px] md:text-[64px] text-white leading-[125%] text-center mt-28'>
                         {t("Join the early phase and")} <br />
-                        <b>{t("become a Core Seed")}</b>
+                        <b>{t("become an Ambassador")}</b>
                     </h1>
                     <p className='text-white text-xl md:text-2xl mt-9'>
                         {t("We're kicking off with a limited group of visionary merchants. Those who join now become our Core Seeds – pioneers who help plant the very first roots of this ecosystem.")}
@@ -377,7 +389,10 @@ function Home() {
                     <p className='text-white text-xl md:text-2xl mt-20 max-w-3/4 mx-auto'>
                         {t("This status is only available during the early phase. Once the network opens to the public, this offer is gone.")}
                     </p>
-                    <div className=' mt-16 font-bold text-base md:text-[20px] text-center py-4 px-6 bg-radial from-[#6BFFE8] to-[#49C4B1] border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>{t("Become the Core Seed")}</div>
+                    <div className=' mt-16 font-bold text-base md:text-[20px] text-center py-4 px-6 bg-radial from-[#6BFFE8] to-[#49C4B1] border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>
+                        <Link to="/contact" >{t("Become an Ambassador")}</Link>
+                    </div>
+                    
                     <p className='text-white text-xl md:text-2xl mt-16'>{t("Our referral structure is designed to reward performance – but most merchants start at Tier 1. As a Core Seed, you begin two levels higher and stay there permanently. No conditions. No extra effort.")}</p>
                 </div>
             </div>
@@ -389,7 +404,7 @@ function Home() {
                     <p className=' text-xl md:text-2xl'>{t("Apply for your terminal or contact us for more information.")}</p>
                     <div className=' max-w-md mx-auto gap-4 mt-10 mb-32'>
 
-                        <div className=' font-bold text-base md:text-[20px] text-center py-3 px-6 bg-darkblue text-white w-full border-1 border-white/61 rounded-xl mx-auto max-w-fit'>{t("Contact Us")}</div>
+                        <Link to="/contact" className=' font-bold text-base md:text-[20px] text-center py-3 px-6 bg-darkblue text-white w-full border-1 border-white/61 rounded-xl mx-auto max-w-fit'>{t("Contact Us")}</Link>
                     </div>
                 </div>
             </div>

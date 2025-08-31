@@ -9,7 +9,7 @@ i18n.use(initReactI18next).init({
             translation: {
                 "test": "Welcome to React and react-i18next",
                 "navAbout": "About",
-                "navProject": "Projects",
+                "navProject": "Products",
                 "navMerchants": "Merchants",
                 "navContact": "Contact",
                 "Bidhpay - every payment matters": "Bidhpay - every payment matters",
@@ -21,7 +21,7 @@ i18n.use(initReactI18next).init({
                 "Payment terminal launch": "Payment terminal launch",
                 "Coming soon": "Coming soon",
                 "Loyalty, cashback, and ethical consumption": "Loyalty, cashback, and ethical consumption",
-                "Coming in Q4 2025": "Coming in Q4 2025",
+                "Coming in Q3SS 2025": "Coming in Q3 2025",
                 "Full ecosystem launch.": "Full ecosystem launch.",
                 "Scroll to learn more": "Scroll to learn more",
                 "Every payment is a seed": "Every payment is a seed",
@@ -96,13 +96,25 @@ i18n.use(initReactI18next).init({
                 "Terms of Service": "Terms of Service",
                 "Privacy Policy": "Privacy Policy",
                 "© 2025 Seedapps. All rights reserved.": "© 2025 Seedapps. All rights reserved.",
+                
+                // New translations
+                "Find out more": "Find out more",
+                "Become an Ambassador": "Become an Ambassador",
+                "We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed": "We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed",
+                "Cashback - Donations": "Cashback - Donations",
+                "Full ethical ecosystem launch": "Full ethical ecosystem launch",
+                "Join the early phase": "Join the early phase",
+                "Join the early phase and become an Ambassador": "Join the early phase and become an Ambassador",
+                "Ready to be a BidhPay Merchant?": "Ready to be a BidhPay Merchant?",
+"Join the early phase and": "Join the early phase and",
+"become an Ambassador": "become an Ambassador"
             }
         },
         fr: {
             translation: {
                 "test": "Bienvenue à React et react-i18next",
                 "navAbout": "À propos",
-                "navProject": "Projets",
+                "navProject": "Produits",
                 "navMerchants": "Commerçants",
                 "navContact": "Contact",
                 "Bidhpay - every payment matters": "Bidhpay - chaque paiement compte",
@@ -114,7 +126,7 @@ i18n.use(initReactI18next).init({
                 "Payment terminal launch": "Lancement du terminal de paiement",
                 "Coming soon": "Bientôt disponible",
                 "Loyalty, cashback, and ethical consumption": "Fidélité, cashback et consommation éthique",
-                "Coming in Q4 2025": "Prévu pour le Q4 2025",
+                "Coming in Q3 2025": "Prévu pour le Q3 2025",
                 "Full ecosystem launch.": "Lancement de l'écosystème complet.",
                 "Scroll to learn more": "Faites défiler pour en savoir plus",
                 "Every payment is a seed": "Chaque paiement est une graine",
@@ -189,25 +201,37 @@ i18n.use(initReactI18next).init({
                 "Terms of Service": "Conditions d'utilisation",
                 "Privacy Policy": "Politique de confidentialité",
                 "© 2025 Seedapps. All rights reserved.": "© 2025 Seedapps. Tous droits réservés.",
+                
+                // New translations
+                "Find out more": "En savoir plus",
+                "Become an Ambassador": "Devenir Ambassadeur",
+                "We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed": "Nous construisons un écosystème qui connecte les commerçants et les consommateurs – avec des avantages mutuels, de la transparence et des valeurs partagées - étape par étape, Graine par Graine",
+                "Cashback - Donations": "Cashback - Dons",
+                "Full ethical ecosystem launch": "Lancement de l'écosystème éthique complet",
+                "Join the early phase": "Rejoignez la phase initiale",
+                "Join the early phase and become an Ambassador": "Rejoignez la phase initiale et devenez Ambassadeur",
+                "Ready to be a BidhPay Merchant?": "Prêt à devenir marchand BidhPay ?",
+"Join the early phase and": "Rejoignez la phase initiale et",
+"become an Ambassador": "devenez Ambassadeur"
             }
         },
         nl: {
             translation: {
                 "test": "Welkom bij React en react-i18next",
                 "navAbout": "Over",
-                "navProject": "Projecten",
+                "navProject": "Producten",
                 "navMerchants": "Handelaren",
                 "navContact": "Contact",
                 "Bidhpay - every payment matters": "Bidhpay - elke betaling telt",
                 "Simple payments.": "Eenvoudige betalingen.",
                 "Powerful meaning.": "Krachtige betekenis.",
-                "BidhPay offers reliable payment terminals at fair prices. But behind that simplicity lies a much bigger story:": "BidhPay biedt betrouwbare betaalterminals tegen eerlijke prijzen. Maar achter die eenvoud schuilt een veel groter verhaal:",
+                "BidhPay offers reliable payment terminals at fair prices. But behind that simplicity lies a much bigger story:": "BidhPay biedt betrouwbare betaalterminals tegen eerlijke prijzen. Achter die eenvoud schuilt een veel groter verhaal:",
                 "A vision where every payment becomes a seed for growth – for your business, your customers, and your community.": "Een visie waarin elke betaling een zaadje wordt voor groei – voor uw bedrijf, uw klanten en uw gemeenschap.",
                 "Now available": "Nu beschikbaar",
                 "Payment terminal launch": "Lancering betaalterminal",
                 "Coming soon": "Binnenkort beschikbaar",
                 "Loyalty, cashback, and ethical consumption": "Loyaliteit, cashback en ethisch consumeren",
-                "Coming in Q4 2025": "Komend in Q4 2025",
+                "Coming in Q3 2025": "Komend in Q3 2025",
                 "Full ecosystem launch.": "Volledige ecosysteemlancering.",
                 "Scroll to learn more": "Scroll om meer te leren",
                 "Every payment is a seed": "Elke betaling is een zaadje",
@@ -245,7 +269,7 @@ i18n.use(initReactI18next).init({
                 "Integrated Sadaqah feature with every payment": "Geïntegreerde Sadaqah-functie bij elke betaling",
                 "A platform that merges faith, community, and commerce": "Een platform dat geloof, gemeenschap en handel samenbrengt",
                 "Merchants:": "Handelaren:",
-                "You are the seed of change": "U bent het zaadje van verandering",
+                "You are the seed of change": "You are the seed of change",
                 "As a merchant, you're at the heart of what we're building. BidhPay isn't just a payment system – it's an ecosystem that helps you grow while giving back.": "Als handelaar staat u centraal in wat we bouwen. BidhPay is niet zomaar een betalingssysteem – het is een ecosysteem dat u helpt groeien terwijl u iets teruggeeft.",
                 "An effortless loyalty program": "Een moeiteloos loyaliteitsprogramma",
                 "A powerful referral structure – for both customers and merchants": "Een krachtige verwijzingsstructuur – voor zowel klanten als handelaren",
@@ -276,12 +300,24 @@ i18n.use(initReactI18next).init({
                 "Ready to become more ": "Klaar om meer te worden ",
                 "than just a shopkeeper?": "dan alleen een winkelier?",
                 "Join the Core Seeds and help us grow something powerful from the ground up.": "Sluit u aan bij de Kernzaden en help ons iets krachtigs vanaf de grond op te bouwen.",
-                "Apply for your terminal or contact us for more information.": "Vraag uw terminal aan of neem contact met ons op voor meer informatie.",
+                "Apply for your terminal or contact us for more information.": "Vraag uw terminal aan atau neem contact met ons op voor meer informatie.",
                 "Contact Us": "Neem contact op",
                 "Sign up for newsletter": "Inschrijven voor nieuwsbrief",
                 "Terms of Service": "Servicevoorwaarden",
                 "Privacy Policy": "Privacybeleid",
                 "© 2025 Seedapps. All rights reserved.": "© 2025 Seedapps. Alle rechten voorbehouden.",
+                
+                // New translations
+                "Find out more": "Meer informatie",
+                "Become an Ambassador": "Word Ambassadeur",
+                "We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed": "We bouwen een ecosysteem dat handelaren en consumenten verbindt – met wederzijdse voordelen, transparantie en gedeelde waarden - stap voor stap, Zaadje voor Zaadje",
+                "Cashback - Donations": "Cashback - Donaties",
+                "Full ethical ecosystem launch": "Volledige ethische ecosysteemlancering",
+                "Join the early phase": "Sluit u aan bij de vroege fase",
+                "Join the early phase and become an Ambassador": "Sluit u aan bij de vroege fase en word Ambassadeur",
+                "Ready to be a BidhPay Merchant?": "Klaar om BidhPay-handelaar te worden?",
+"Join the early phase and": "Sluit u aan bij de vroege fase en",
+"become an Ambassador": "word Ambassadeur"
             }
         },
         ar: {
@@ -300,7 +336,7 @@ i18n.use(initReactI18next).init({
                 "Payment terminal launch": "إطلاق طرف الدفع",
                 "Coming soon": "قريباً",
                 "Loyalty, cashback, and ethical consumption": "الولاء، الاسترجاع النقدي، والاستهلاك الأخلاقي",
-                "Coming in Q4 2025": "قادم في الربع الرابع 2025",
+                "Coming in Q3 2025": "إطلاق النظام البيئي الكامل. قادم في الربع الثالث من 2025",
                 "Full ecosystem launch.": "إطلاق النظام البيئي الكامل.",
                 "Scroll to learn more": "انتقل لمعرفة المزيد",
                 "Every payment is a seed": "كل دفعة هي بذرة",
@@ -375,6 +411,18 @@ i18n.use(initReactI18next).init({
                 "Terms of Service": "شروط الخدمة",
                 "Privacy Policy": "سياسة الخصوصية",
                 "© 2025 Seedapps. All rights reserved.": "© 2025 Seedapps. جميع الحقوق محفوظة.",
+                
+                // New translations
+                "Find out more": "اكتشف المزيد",
+                "Become an Ambassador": "كن سفيرًا",
+                "We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values - step by step, Seed by Seed": "نحن نبني نظامًا بيئيًا يربط التجار والمستهلكين – بفوائد متبادلة، شفافية، وقيم مشتركة - خطوة بخطوة، بذرة تلو الأخرى",
+                "Cashback - Donations": "استرجاع نقدي - تبرعات",
+                "Full ethical ecosystem launch": "إطلاق النظام البيئي الأخلاقي الكامل",
+                "Join the early phase": "انضم إلى المرحلة المبكرة",
+                "Join the early phase and become an Ambassador": "انضم إلى المرحلة المبكرة وكن سفيرًا",
+                "Ready to be a BidhPay Merchant?": "مستعد لتصبح تاجر BidhPay؟",
+"Join the early phase and": "انضم إلى المرحلة المبكرة و",
+"become an Ambassador": "كن سفيرًا"
             }
         }
     }
