@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import bidhpayLogo from './assets/bidhpayLogo.png';
 import { Icon } from "@iconify/react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ t, i18n }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,7 +12,17 @@ function Nav({ t, i18n }) {
         { name: 'French', flag: 'circle-flags:fr', code: 'fr' },
         { name: 'Dutch', flag: 'circle-flags:nl', code: 'nl' }
     ];
+    const navigate = useNavigate();
     
+    const scrollToSection = (hash) => {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -42,10 +52,11 @@ function Nav({ t, i18n }) {
       </Link>
 
                     <div className=' md:inline-flex gap-8 items-center hidden'>
-                        <span>{t("navAbout")}</span>
-                        <span>{t("navProject")}</span>
-                        <span>{t("navMerchants")}</span>
+                        <a onClick={() => scrollToSection('#about')}>{t("navAbout")}</a>
+                        <a onClick={() => scrollToSection('#project')}>{t("navProject")}</a>
+                        <a onClick={() => scrollToSection('#merchants')}>{t("navMerchants")}</a>
                         <Link to="/contact">{t("navContact")}</Link>
+                        <a onClick={() => scrollToSection('#merchants')}>Login</a>
                     </div>
                     <div className='md:hidden cursor-pointer' onClick={() => setIsMobileDropdownOpen(!isMobileDropdownOpen)}>
                         <Icon height={36} icon="mdi:menu" />
@@ -94,16 +105,29 @@ function Nav({ t, i18n }) {
                 <div className='bg-white/58 border-1 border-white/31 rounded-2xl mt-2 shadow-lg backdrop-blur-md'>
                     <div className='flex flex-col py-2'>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>{t("navAbout")}</span>
+                            <a onClick={() => { scrollToSection('#about'); setIsMobileDropdownOpen(false); }}>
+                                <span className='text-lg'>{t("navAbout")}</span>
+                            </a>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <span className='text-lg'>{t("navProject")}</span>
+                            <a onClick={() => { scrollToSection('#project'); setIsMobileDropdownOpen(false); }}>
+                                <span className='text-lg'>{t("navProject")}</span>
+                            </a>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                        <span className='text-lg'>{t("navMerchants")}</span>
+                            <a onClick={() => { scrollToSection('#merchants'); setIsMobileDropdownOpen(false); }}>
+                                <span className='text-lg'>{t("navMerchants")}</span>
+                            </a>
                         </div>
                         <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                            <Link to={"/contact"} className='text-lg' onClick={()=>{setIsMobileDropdownOpen(false)}}><span className='text-lg'>{t("navContact")}</span></Link>
+                            <Link to={"/contact"} className='text-lg' onClick={()=>{setIsMobileDropdownOpen(false)}}>
+                                <span className='text-lg'>{t("navContact")}</span>
+                            </Link>
+                        </div>
+                        <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
+                            <a onClick={() => { scrollToSection('#merchants'); setIsMobileDropdownOpen(false); }}>
+                                <span className='text-lg'>Login</span>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css'
 import "./i18n"
 import { useTranslation } from 'react-i18next';
@@ -28,33 +28,38 @@ function Home() {
     }, []);
     const [activeIndex, setActiveIndex] = useState(-1);
 
+    const merchantsRef = useRef(null);
+
     useEffect(() => {
-        const interval = setInterval(() => {
-            setActiveIndex((prev) => (prev + 1) % 4);
-        }, 1500); // Change card every 3 seconds
-
-        return () => clearInterval(interval);
-    }, []);
-
-    const cardVariants = {
-        active: {
-            scale: 1.10,
-
-            transition: { duration: 0.5, delay: 0.5 }
-        },
-        inactive: {
-            scale: 1,
-
-            transition: { duration: 0.5, delay: 0.5 }
-        }
-    };
+        const handleHashScroll = () => {
+          const hash = window.location.hash;
+          if (hash) {
+            const element = document.querySelector(hash);
+            if (element) {
+              setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }, 100);
+            }
+          }
+        };
+      
+        handleHashScroll();
+        
+        // Also handle hash changes while on the page
+        window.addEventListener('hashchange', handleHashScroll);
+        
+        return () => {
+          window.removeEventListener('hashchange', handleHashScroll);
+        };
+      }, []);
+   
 
 
     return (
         <>
 
 
-            <div className='relative min-h-[106svh] -mt-52 pb-64 md:pb-0'>
+            <div className='relative min-h-[106svh] md:-mt-52 pb-64 md:pb-0'>
                 <div className='absolute top-0 left-0 w-full min-h-full bg-[url("./assets/image6.png")] bg-cover bg-center bg-no-repeat -z-40'></div>
                 <div className='mx-auto max-w-[1100px] h-screen  '>
 
@@ -62,77 +67,64 @@ function Home() {
                     {/* Hero Section */}
                     <div className=' -mt-[325px] md:mt-[78px] px-5 h-screen'>
                         {/* Left Content Area */}
-                        <div className='flex-1 max-w-2xl flex flex-col md:justify-center items-center md:items-baseline h-full'>
-                            {/* Tagline Badge */}
-                            <div className='inline-block bg-darkblue text-white text-sm md:text-xl font-semibold w-fit mt-48 px-4 py-1 rounded-[15px] tracking-wider'>
-                                {t("Bidhpay - every payment matters")}
-                            </div>
+                        <div className=' flex-1 max-w-4xl flex flex-col items-center  mx-auto h-full text-center'>
+                            
+                           
 
                             {/* Main Heading */}
-                            <h1 className=' text-[40px] md:text-[64px] font-bold text-white md:leading-20 mt-2 text-center md:text-left'>
-                                {t("Simple payments.")}<br />
-                                {t("Powerful meaning.")}
+                            <h1 className=' text-[40px] md:text-[64px] font-bold text-white md:leading-20 mt-56 text-center md:w-[600px]'>
+                            {t("Bidhpay - every payment matters")}
                             </h1>
 
                             {/* Descriptive Paragraph */}
-                            <p className='text-white text-center md:text-left text-base md:text-xl mt-8'>
-                                {t("BidhPay offers reliable payment terminals at fair prices. But behind that simplicity lies a much bigger story:")}
-                                 <br /> {t("A vision where every payment becomes a seed for growth – for your business, your customers, and your community.")}
+                            <p className='text-white text-center text-base md:text-xl mt-8'>
+                                {t("BidhPay offers reliable payment terminals at fair prices. But behind that simplicity lies a much bigger story:")} {" "}
+                                {t("A vision where every payment becomes a seed for growth – for your business, your customers, and your community.")}
                             </p>
 
 
                             {/* Call-to-Action Cards */}
-                            <div className='mt-8 [&>*]:py-2 [&>*]:text-white [&>*]:rounded-2xl [&>*]:bg-[#1f1c2a]/41 [&>*]:mt-2 [&>*]:max-w-96 [&>*]:px-4 [&>*]:backdrop-blur-md [&>*]:flex [&>*]:items-center [&>*]:gap-3 [&>div>div>div:nth-child(2)]:font-bold [&>div>div>div:nth-child(2)]:md:text-xl [&>div>div>div:nth-child(2)]:text-sm [&>div>div>div:nth-child(1)]:text-xs [&>div>div>div:nth-child(1)]:md:text-base pb-16'>
+                            <div className='md:grid md:grid-cols-3 text-center md:gap-8 mt-8 [&>*]:py-4 [&>*]:text-white [&>*]:rounded-2xl [&>*]:bg-[#1C1F2A5E]  [&>*]:max-w-96 [&>*]:px-4 [&>*]:flex [&>*]:mt-4 [&>*]:md:mt-4 [&>*]:justify-center  [&>*]:gap-3 [&>div>div>div:nth-child(3)]:font-bold [&>div>div>div:nth-child(3)]:md:text-xl [&>div>div>div:nth-child(3)]:text-sm [&>div>div>div:nth-child(2)]:text-xs [&>div>div>div:nth-child(2)]:md:text-base pb-16 [&>*>*]:space-y-3 [&>*>*>img]:mx-auto'>
                                 <motion.div
-                                    variants={cardVariants}
-                                    animate={activeIndex === 0 ? "active" : "inactive"}
+                                    
                                 >
-                                    <img src={seeds1} alt="Payment Icon" className="h-8 md:h-10" />
+                                    
                                     <div>
+                                    <img src={seeds1} alt="Payment Icon" className="h-8 md:h-10" />
                                         <div>{t("Now available")}</div>
                                         <div>{t("Payment terminal launch")}</div>
                                     </div>
                                 </motion.div>
 
                                 <motion.div
-                                    variants={cardVariants}
-                                    animate={activeIndex === 1 ? "active" : "inactive"}
+                                    
                                 >
-                                    <img src={seeds2} alt="Loyalty Icon" className="h-8 md:h-10" />
+                                    
                                     <div>
+                                        <img src={seeds2} alt="Loyalty Icon" className="h-8 md:h-10" />
                                         <div>{t("Coming soon")}</div>
                                         <div>{t("Loyalty, cashback, and ethical consumption")}</div>
                                     </div>
                                 </motion.div>
 
                                 <motion.div
-                                    variants={cardVariants}
-                                    animate={activeIndex === 2 ? "active" : "inactive"}
+                                    
                                 >
-                                    <img src={seeds3} alt="Ecosystem Icon" className="h-8 md:h-10" />
+                                    
                                     <div>
+                                        <img src={seeds3} alt="Ecosystem Icon" className="h-8 md:h-10" />
                                         <div>{t("Coming in Q4 2025")}</div>
                                         <div>{t("Full ecosystem launch.")}</div>
                                     </div>
                                 </motion.div>
                             </div>
+                            <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>{t("Find out more")}</div>
                         </div>
 
 
                     </div>
 
-                    {/* Scroll Indicator */}
-                    <div className='absolute top-0 left-0 w-full h-screen -translate-x-1 pointer-events-none'>
-                        <div className='absolute hidden bottom-16 left-1/2 transform -translate-x-1/2 text-center flex-col items-center md:flex'>
-
-                            <div className='mb-2'>
-
-                                <img src={scrollIcon} alt="Scroll Icon" className=" w-[50px] animate-bounce text-white" />
-                            </div>
-                            <div className='text-white text-xl font-bold hidden md:block'>{t("Scroll to learn more")}</div>
-
-                        </div>
-                    </div>
+                    
 
                 </div>
             </div >
@@ -142,7 +134,7 @@ function Home() {
                 <div className='absolute top-0 left-0 translate-x-1 w-full h-full md:bg-[url("./assets/image2.png")] bg-cover bg-no-repeat -z-30 '></div>
                 <div className='absolute top-0 left-0 translate-x-1 w-full h-full bg-[url("./assets/mobileImg2.png")] md:hidden bg-top bg-no-repeat -z-30 bg-cover '></div>
                 <div className='mx-auto max-w-[1100px] px-5'>
-                    <h1 className='w-fit mx-auto text-darkblue text-[40px] text-center md:text-left md:text-[64px] font-bold pt-52'>{t("Every payment is a seed")}</h1>
+                    <h1 className='w-fit mx-auto text-darkblue text-[40px] text-center md:text-left md:text-[64px] font-bold pt-24'>{t("Every payment is a seed")}</h1>
                     <div className='mx-auto  w-fit bg-darkblue text-white text-sm md:text-xl font-semibold px-4 py-1 rounded-[15px] mt-6'>
                         {t("What happens with every payment?")}
                     </div>
@@ -163,7 +155,7 @@ function Home() {
                             <div>{t("Merchant to customer and both to community")}</div>
                         </div>
                     </div>
-                    <div className=' mt-16 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-[#FFFFFF]/42 to-[#EFEFEF]/57 border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>{t("Become the Core Seed")}</div>
+                    <div className=' mt-16 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-radial from-[#FFFFFF]/42 to-[#EFEFEF]/57 border-1 border-white/61 text-darkblue w-fit mx-auto rounded-2xl'>{t("Become an Ambasador")}</div>
                 </div>
             </div>
             <div className=' relative'>
@@ -176,11 +168,11 @@ function Home() {
                     <p className='mt-5 md:text-xl text-base max-w-96 text-white text-center md:text-left'>{t("Together, we plant something meaningful – seed by seed.")}</p>
                     <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-6 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto md:mx-0'>{t("Become the Core Seed")}</div>
                 </div>
-                <img src={lineBottom} alt="Scroll Icon" className=" hidden md:block transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0 z-50" />
-                <img src={mobileTop} alt="Scroll Icon" className=" block md:hidden transform translate-y-1/2 w-[1800px] mx-auto absolute bottom-0 left-0 z-50" />
+                <img src={lineBottom} alt="Scroll Icon" className=" hidden md:block transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0 z-40" />
+                <img src={mobileTop} alt="Scroll Icon" className=" block md:hidden transform translate-y-1/2 w-[1800px] mx-auto absolute bottom-0 left-0 z-40" />
 
             </div>
-            <div className=' relative overflow-hidden pb-24 md:pb-0 '>
+            <div className=' relative overflow-hidden pb-24 md:pb-0 ' id='about'>
                 <div className='absolute top-0 left-0 w-full h-full bg-[#5AEDDB] -z-40'></div>
                 <div className='absolute bottom-1/5 left-0 w-full h-full bg-radial from-[#008B78] via-70% via-[#008B78]/0  to-[#008B78]/0 -z-30 transform -translate-x-1/2 translate-y-1/2 '></div>
                 <div className='absolute bottom-1/5 right-0 w-full h-full bg-radial from-[#008B78] via-70% via-[#008B78]/0  to-[#008B78]/0 -z-30 transform translate-x-1/2 translate-y-1/2'></div>
@@ -199,10 +191,10 @@ function Home() {
                 </div>
                 <div className=''>
                     <div className='px-5 max-w-[1100px] mx-auto mt-28 mb-40'>
-                        <h1 className='mt-6 text-[40px] md:text-[64px] text-center md:text-left font-bold text-darkblue'>{t("Our phased launch")}</h1>
-                        <p className='mt-9 md:text-[20px] text-base text-darkblue max-w-2xl'>{t("We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values. But we're doing it step by step.")}</p>
+                        <h1 className='mt-6 md:mt-60 text-[40px] md:text-[64px] text-center font-bold text-darkblue'>{t("Our phased launch")}</h1>
+                        <p className='mt-9  md:text-[20px] text-center mx-auto text-base text-darkblue max-w-2xl'>{t("We're building an ecosystem that connects merchants and consumers – with mutual benefits, transparency, and shared values. But we're doing it step by step.")}</p>
                         <div className=' text-white grid-cols-1 md:grid-cols-3 grid gap-4 mt-16 [&>*]:mt-16 [&>*]:md:mt-0 
-          [&>*]:bg-darkblue/37 [&>*]:rounded-2xl [&>*]:px-3 [&>*]:pb-6
+           [&>*]:rounded-2xl [&>*]:px-3 [&>*]:pb-6
           [&>*>*:nth-child(1)]:bg-darkblue [&>*>*:nth-child(1)]:text-white [&>*>*:nth-child(1)]:text-lg [&>*>*:nth-child(1)]:font-bold [&>*>*:nth-child(1)]:px-4 [&>*>*:nth-child(1)]:py-1 [&>*>*:nth-child(1)]:rounded-[15px] [&>*>*:nth-child(1)]:mx-auto [&>*>*:nth-child(1)]:w-full [&>*>*:nth-child(1)]:-translate-y-3 [&>*>*:nth-child(1)]:inline-flex [&>*>*:nth-child(1)]:items-center [&>*>*:nth-child(1)]:gap-2 
           [&>*>h2]:text-white [&>*>h2]:text-3xl [&>*>h2]:font-bold [&>*>h2]:leading-12
           [&>*>h2>img]:h-5 [&>*>h2>img]:w-5
@@ -212,7 +204,7 @@ function Home() {
           [&>*>div:nth-child(n+3)>span]:md:text-xl [&>*>div:nth-child(n+3)>span]:text-base 
           [&>*:nth-child(1)>div:nth-child(n+3)>*:nth-child(1)]:text-[#6BFFE8] 
           [&>*>div:nth-child(n+3)>*:nth-child(1)]:shrink-0 [&>*>div:nth-child(n+3)>*:nth-child(1)]:h-[26px] [&>*>div:nth-child(n+3)>*:nth-child(1)]:md:w-[26px] [&>*>div:nth-child(n+3)>*:nth-child(1)]:w-[20px] [&>*>div:nth-child(n+3)>*:nth-child(1)]:text-darkblue' >
-                            <div>
+                            <div className='bg-darkblue/77'>
                                 <div>
                                     <img src={seeds4} alt="Scroll Icon" />
                                     <span>{t("Phase 1 - Now live")}</span>
@@ -233,7 +225,7 @@ function Home() {
 
                                 </div>
                             </div>
-                            <div>
+                            <div className='bg-darkblue/37'>
                                 <div>
                                     <img src={seeds4} alt="Scroll Icon" />
                                     {t("Phase 2 - Coming Soon")}
@@ -253,9 +245,14 @@ function Home() {
                                     <span>{t("Access your own customer portal with real-time insights")}</span>
 
                                 </div>
+                                <div>
+                                    <Icon icon="prime:heart" />
+                                    <span>{t("Integrated Sadaqah feature with every payment")}</span>
+
+                                </div>
 
                             </div>
-                            <div>
+                            <div className='bg-darkblue/37'>
                                 <div>
                                     <img src={seeds4} alt="Scroll Icon" />
                                     {t("Phase 3 - Coming Soon")}
@@ -265,11 +262,7 @@ function Home() {
                                     <Icon icon="gravity-ui:megaphone" />
                                     <span>{t("Marketing tools designed for local business owners")}</span>
                                 </div>
-                                <div>
-                                    <Icon icon="ant-design:heart-outlined" />
-                                    <span>{t("Integrated Sadaqah feature with every payment")}</span>
-
-                                </div>
+                                
                                 <div>
                                     <Icon icon="carbon:platforms" />
                                     <span>{t("A platform that merges faith, community, and commerce")}</span>
@@ -277,16 +270,19 @@ function Home() {
                                 </div>
                             </div>
                         </div>
+                        <h1 className=' text-[40px] md:text-[64px] font-bold text-center mt-24'>{t("Become an Ambasador")}</h1>
+                        <div className=' mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>{t("Join the early phase")}</div>
                     </div>
                 </div>
             </div>
 
-            <div className=' md:bg-[url("./assets/image5.png")] bg-cover bg-center bg-no-repeat pt-24 pb-36 relative inset-shadow-black'>
+            <div className=' md:bg-[url("./assets/image5.png")] bg-cover bg-center bg-no-repeat pt-24 pb-36 relative'>
+            {/*<div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/40 via-50% via-black/0 to-black/40 z-30'></div>*/}
             <div className='absolute top-0 bg-[url("./assets/mobileImg5.png")] h-screen w-full -z-20 bg-cover bg-no-repeat'></div>
-            <div className='absolute top-0 bg-[#171A23] h-full w-full -z-30'></div>
-                <img src={lineTop} alt="Scroll Icon" className=" hidden md:block transform -translate-y-1/2 w-full mx-auto absolute top-0 left-0" />
-                <img src={mobileTop} alt="Scroll Icon" className=" block md:hidden transform -translate-y-1/2 w-[1800px] mx-auto absolute top-0 left-0" />
-                <img src={lineBottom} alt="Scroll Icon" className=" hidden md:block transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0" />
+            <div className='absolute top-0 bg-[#171A23] h-full w-full -z-30' id='merchants'></div>
+                <img src={lineTop} alt="Scroll Icon" className=" hidden md:block transform -translate-y-1/2 w-full mx-auto absolute top-0 left-0 z-40" />
+                <img src={mobileTop} alt="Scroll Icon" className=" block md:hidden transform -translate-y-1/2 w-[1800px] mx-auto absolute top-0 left-0 z-40" />
+                <img src={lineBottom} alt="Scroll Icon" className=" hidden md:block transform translate-y-1/2 w-full mx-auto absolute bottom-0 left-0 z-40" />
                 <div className='px-5 max-w-[1100px] mx-auto mt-[50svh] md:mt-0 '>
                     <h1 className='text-[40px] md:text-[64px] font-bold max-w-lg text-white leading-[125%] text-center md:text-left'>{t("Merchants:")} <br />
                         {t("You are the seed of change")}
@@ -388,9 +384,9 @@ function Home() {
             <div className='relative text-darkblue -mt-72 pt-72 -mb-72 pb-72'>
                 <div className='absolute top-0 left-0 w-full h-full bg-radial from-[#FFFFFF] via-85% via-[#CCCCCC] to-[#999999] -z-40'></div>
                 <div className='px-5 max-w-[1100px] mx-auto pt-20 text-center'>
-                    <h1 className='text-5xl md:text-[64px] leading-[125%] font-bold'>{t("Ready to become more")} <br /> {t("than just a shopkeeper?")}</h1>
-                    <p className=' text-xl md:text-2xl mt-9 max-w-[812px] mx-auto'>{t("Join the Core Seeds and help us grow something powerful from the ground up.")}</p>
-                    <p className=' text-xl md:text-2xl mt-9'>{t("Apply for your terminal or contact us for more information.")}</p>
+                    <h1 className='text-5xl md:text-[64px] leading-[125%] font-bold'>{t("Ready to be a BidhPay Merchant?")}</h1>
+                    <p className=' text-xl md:text-2xl mt-10 max-w-[812px] mx-auto'>{t("Join the Core Seeds and help us grow something powerful from the ground up.")}</p>
+                    <p className=' text-xl md:text-2xl'>{t("Apply for your terminal or contact us for more information.")}</p>
                     <div className=' max-w-md mx-auto gap-4 mt-10 mb-32'>
 
                         <div className=' font-bold text-base md:text-[20px] text-center py-3 px-6 bg-darkblue text-white w-full border-1 border-white/61 rounded-xl mx-auto max-w-fit'>{t("Contact Us")}</div>

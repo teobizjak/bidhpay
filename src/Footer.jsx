@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 function Footer({t}) {
   return (
-    <div className=' relative '>
+    <div className=' relative  '>
     <div className='absolute top-0 left-0 w-full h-full bg-[url("./assets/bg2.png")] bg-cover bg-top bg-no-repeat -z-30'>
         <img src={seeds7} alt="Seeds 6" className=" w-44 mx-auto transform -translate-y-2/5" />
     </div>
@@ -27,7 +27,7 @@ function Footer({t}) {
     </div>
     <div className=' h-[1px] md:max-w-[1100px] mx-auto bg-white/18'></div>
     <div className='md:max-w-[1100px] max-w-full mx-auto text-center md:text-left md:flex justify-between py-8 text-[#C0C0C0] text-sm md:text-base'>
-        <div className='inline-flex justify-around items-center md:gap-6 gap-3 [&>*]:hover:text-[#f0f0f0]'>
+        <div className='grid grid-cols-3 space-y-4 md:space-y-0 md:inline-flex md:justify-around md:items-center md:gap-6 gap-3 [&>*]:hover:text-[#f0f0f0]'>
             <Link to="">{t("navAbout")}</Link>
             <Link to="">{t("navProject")}</Link>
             <Link to="">{t("navMerchants")}</Link>
