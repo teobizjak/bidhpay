@@ -16,9 +16,7 @@ function Contact() {
                 <h1 className=' text-[40px] md:text-[64px] text-center '>
                     Contact Us
                 </h1>
-                <p className=' text-[20px] md:text-[24px] text-center mt-8'>
-                    Lorem ipsum dolor sit amet consectetur. Malesuada quis nisi platea condimentum. Velit pharetra ut aliquam adipiscing nulla vel eu. Leo eget egestas arcu lectus at. Molestie integer neque ornare etiam enim auctor id orci.
-                </p>
+                
 
                 <div className=' mt-8 flex flex-col md:flex-row [&>*]:grow [&>*]:bg-[#0D0F16]/41 [&>*]:rounded-lg [&>*]:px-4 [&>*]:py-2 text-white gap-4 justify-center'>
                     <input type="text" placeholder='Name' />
