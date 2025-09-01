@@ -31,9 +31,9 @@ function Footer({ t }) {
                 <img src={seedapps} alt="logo" className=' md:max-h-14 max-h-10 max-w-fit md:mx-0 mx-auto mb-10 md:mb-0' />
                 <div className='inline-flex  justify-around items-center md:gap-9 gap-6 [&>*]:hover:text-[#f0f0f0]'>
                     <Icon icon="prime:twitter" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
-                    <Icon icon="bi:discord" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
-                    <Icon icon="cib:github" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
-                    <Icon icon="basil:telegram-solid" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
+                    <Icon icon="basil:instagram-solid" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
+                    <Icon icon="raphael:facebook" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
+                    <Icon icon="mdi:linkedin" className=' md:h-[56px] md:w-[56px] h-[26px] w-[26px]' />
 
                 </div>
             </div>
