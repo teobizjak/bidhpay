@@ -25,15 +25,17 @@ function Nav({ t, i18n }) {
 
     };
 
-    useEffect(()=>{
-        if(navigator.language =="nl"){
+    useEffect(() => {
+        const browserLang = navigator.language || navigator.userLanguage;
+        
+        if (browserLang.startsWith("nl")) {
             setSelectedLanguage("Dutch");
-        }else if(navigator.language == "fr"){
+        } else if (browserLang.startsWith("fr")) {
             setSelectedLanguage("French");
-        }else{
+        } else {
             setSelectedLanguage("English");
         }
-    },[])
+    }, []);
 
     useEffect(() => {
         const handleClickOutside = (event) => {
