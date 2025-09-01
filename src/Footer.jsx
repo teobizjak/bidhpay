@@ -41,8 +41,8 @@ function Footer({ t }) {
             <div className='md:max-w-[1100px] max-w-full mx-auto text-center md:text-left md:flex justify-between py-8 text-[#C0C0C0] text-sm md:text-base'>
                 <div className='grid grid-cols-3 space-y-4 md:space-y-0 md:inline-flex md:justify-around md:items-center md:gap-6 gap-3 [&>*]:hover:text-[#f0f0f0]'>
                     <a onClick={() => scrollToSection('#about')}>{t("navAbout")}</a>
-                    <a onClick={() => scrollToSection('#project')}>{t("navProject")}</a>
                     <a onClick={() => scrollToSection('#merchants')}>{t("navMerchants")}</a>
+                    <a href='https://bidhpay.myshopify.com/'>{t("navProject")}</a>
                     <Link to="/contact">{t("navContact")}</Link>
                     <Link to="/terms">{t("Terms of Service")}</Link>
                     <Link to="/privacyPolicy">{t("Privacy Policy")}</Link>

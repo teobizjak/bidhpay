@@ -54,7 +54,7 @@ function Nav({ t, i18n }) {
                         <div className=' md:inline-flex gap-6 items-center hidden'>
                             <a onClick={() => scrollToSection('#about')} className=' cursor-pointer'>{t("navAbout")}</a>
                             <a onClick={() => scrollToSection('#merchants')} className=' cursor-pointer'>{t("navMerchants")}</a>
-                            <a onClick={() => scrollToSection('#project')} className=' cursor-pointer'>{t("navProject")}</a>
+                            <a href='https://bidhpay.myshopify.com/' className=' cursor-pointer'>{t("navProject")}</a>
                             
                             <Link to="/contact" className=' cursor-pointer'>{t("navContact")}</Link>
                             <a href='http://merchant.bidhpay.com/portal' className='flex items-center justify-between'>
@@ -116,7 +116,7 @@ function Nav({ t, i18n }) {
                                 </a>
                             </div>
                             <div className='px-6 py-3 hover:bg-white/30 cursor-pointer transition-colors duration-200'>
-                                <a onClick={() => { scrollToSection('#project'); setIsMobileDropdownOpen(false); }}>
+                                <a href='https://bidhpay.myshopify.com/'>
                                     <span className='text-lg'>{t("navProject")}</span>
                                 </a>
                             </div>
