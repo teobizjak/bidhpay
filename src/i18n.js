@@ -21,7 +21,7 @@ i18n.use(initReactI18next).init({
                 "Payment terminal launch": "Payment terminal launch",
                 "Coming soon": "Coming soon",
                 "Loyalty, cashback, and ethical consumption": "Loyalty, cashback, and ethical consumption",
-                "Coming in Q3SS 2025": "Coming in Q3 2026",
+                "Coming in Q3 2025": "Coming in Q3 2026",
                 "Full ecosystem launch.": "Full ecosystem launch.",
                 "Scroll to learn more": "Scroll to learn more",
                 "Every payment is a seed": "Every payment is a seed",
