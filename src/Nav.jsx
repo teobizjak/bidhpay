@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Nav({ t, i18n }) {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [selectedLanguage, setSelectedLanguage] = useState('English');
+    const [selectedLanguage, setSelectedLanguage] = useState("English");
     const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
     const languages = [
         { name: 'English', flag: 'circle-flags:gb', code: 'en' },
@@ -22,7 +22,18 @@ function Nav({ t, i18n }) {
                 element.scrollIntoView({ behavior: 'smooth' });
             }
         }, 100);
+
     };
+
+    useEffect(()=>{
+        if(navigator.language =="nl"){
+            setSelectedLanguage("Dutch");
+        }else if(navigator.language == "fr"){
+            setSelectedLanguage("French");
+        }else{
+            setSelectedLanguage("English");
+        }
+    },[])
 
     useEffect(() => {
         const handleClickOutside = (event) => {
