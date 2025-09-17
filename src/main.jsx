@@ -15,8 +15,18 @@ import Footer from './Footer';
 function App() {
     const { t, i18n } = useTranslation();
 
+    
+
+
   useEffect(() => {
+    
+    if(localStorage.getItem('language')){
+      i18n.changeLanguage(localStorage.getItem('language'));
+  }else{
     i18n.changeLanguage(navigator.language);
+    localStorage.setItem('language', navigator.language);
+  }
+    
   }, []);
   return (
     <BrowserRouter>

@@ -26,7 +26,7 @@ function Nav({ t, i18n }) {
     };
 
     useEffect(() => {
-        const browserLang = navigator.language || navigator.userLanguage;
+        const browserLang = localStorage.getItem('language') || navigator.language || navigator.userLanguage;
         
         if (browserLang.startsWith("nl")) {
             setSelectedLanguage("Dutch");
