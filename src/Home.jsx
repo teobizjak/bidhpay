@@ -263,7 +263,7 @@ function Home() {
                             <div className='bg-darkblue/37'>
                                 <div>
                                     <img src={seeds4} alt="Scroll Icon" />
-                                    {t("Phase 3 - Coming Soon")}
+                                    {t("Phase 3 - Q3 2026")}
                                 </div>
                                 <h2>{t("Full ethical ecosystem launch")}</h2>
                                 <div>
@@ -281,14 +281,14 @@ function Home() {
                         <h1 className=' text-[40px] md:text-[64px] font-bold text-center mt-24'>{t("Become an Ambassador")}</h1>
                         <div className=' mt-12 md:mt-8 font-bold md:text-[20px] text-base text-center py-4 px-10 bg-white/61 border-1 border-white/61 backdrop-blur-lg text-darkblue w-fit rounded-2xl mx-auto'>
 
-                            <Link to="/contact" >{t("Join the early phase")}</Link>
+                            <Link to="/contact" >Join now</Link>
                         </div>
                         
                     </div>
                 </div>
             </div>
 
-            <div className=' md:bg-[url("./assets/image5.png")] bg-cover bg-center bg-no-repeat pt-24 pb-36 relative'>
+            <div className=' md:bg-[url("./assets/newBack.webp")] bg-cover bg-center bg-no-repeat pt-24 pb-36 relative'>
             {/*<div className='absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/40 via-50% via-black/0 to-black/40 z-30'></div>*/}
             <div className='absolute top-0 bg-[url("./assets/mobileImg5.png")] h-screen w-full -z-20 bg-cover bg-no-repeat'></div>
             <div className='absolute top-0 bg-[#171A23] h-full w-full -z-30' id='merchants'></div>
